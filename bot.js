@@ -10,24 +10,9 @@ bot.use((ctx, next) => {
 });
 
 bot.start((ctx) => {
-  // ctx.reply('Welcome');
-  // console.log(ctx)
-  // console.log(ctx.from)
-  // console.log(ctx.chat)
-  // console.log(ctx.message)
-  // console.log(ctx.updateSubTypes)
   console.log(ctx.updateSubTypes[0]);
 
-  // ctx.reply(`Welcome ${ctx.from.first_name} ${ctx.from.last_name}`)
-  // ctx.reply(`Total Users: ${ctx.state.users}`) // shurtcuts does not require id
-
-  // shortcuts avoid to write the following
-  // bot.telegram.sendMessage(ctx.chat.id, 'hello world', [extra]);
   bot.telegram.sendMessage(ctx.chat.id, "hello world");
-  // bot.telegram.sendMessage(ctx.chat.id, '**hello world**', {
-  //   parse_mode: 'Markdown',
-  //   disable_notification: true
-  // });
 });
 
 bot.help((ctx) => ctx.reply("help command"));
@@ -45,14 +30,6 @@ bot.command(["mytest", "Mytest", "test"], (ctx) => {
 bot.hears("computer", (ctx) => {
   ctx.reply("Hey I am selling a computer!!!");
 });
-
-// bot.on('text', ctx => {
-//   ctx.reply('text message');
-// });
-
-// bot.on('sticker', ctx => {
-//   ctx.reply('oh! you like stickers')
-// })
 
 // this methods can be recognized inside a long text
 bot.mention("BotFather", (ctx) => {
